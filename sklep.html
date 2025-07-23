@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sklep - Shopexy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="sklep.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Shopexy</h1>
+    <nav>
+      <a href="sandra.html">Strona główna</a>
+      <a href="sklep.html">Sklep</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Nasz Sklep</h2>
+    <p>Wybierz spośród najlepszych, które podjebał Rafał.</p>
+  </section>
+
+  <div class="filter">
+    <input type="text" id="search" placeholder="Szukaj produktu..." oninput="filterProducts()" />
+  </div>
+
+  <section class="products" id="product-list">
+    <div class="product" data-name="Laptop">
+      <h3>Laptop</h3>
+      <p>Wysokiej jakości laptop do pracy i rozrywki.</p>
+      <div class="price">3000 zł</div>
+      <button class="add-to-cart" onclick="addToCart('Laptop', 3000)">Dodaj do koszyka</button>
+    </div>
+    <div class="product" data-name="Smartphone">
+      <h3>Smartphone</h3>
+      <p>Nowoczesny smartfon z najlepszym aparatem.</p>
+      <div class="price">2500 zł</div>
+      <button class="add-to-cart" onclick="addToCart('Smartphone', 2500)">Dodaj do koszyka</button>
+    </div>
+    <div class="product" data-name="Słuchawki">
+      <h3>Słuchawki</h3>
+      <p>Bezprzewodowe słuchawki z redukcją szumów.</p>
+      <div class="price">600 zł</div>
+      <button class="add-to-cart" onclick="addToCart('Słuchawki', 600)">Dodaj do koszyka</button>
+    </div>
+  </section>
+
+  <section class="cart" id="cart">
+    <h3>Twój koszyk</h3>
+    <div id="cart-items"></div>
+    <div class="total">Łącznie: <span id="total">0</span> zł</div>
+  </section>
+
+  <section class="form-wrapper">
+    <h3>Formularz zamówienia</h3>
+    <form id="order-form" onsubmit="submitOrder(event)">
+      <input type="text" id="name" placeholder="Imię i nazwisko" required />
+      <input type="email" id="email" placeholder="Adres e-mail" required />
+      <textarea id="address" placeholder="Adres dostawy" rows="4" required></textarea>
+      <button type="submit">Zamów i zapłać</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Damiany. Wszelkie prawa zastrzeżone.
+  </footer>
+
+<script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+<script src="sklep.js"></script>
+</body>
+</html>
